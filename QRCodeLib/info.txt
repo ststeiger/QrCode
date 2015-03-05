@@ -1,0 +1,33 @@
+﻿
+Remove references:
+mscorlib.dll
+System.Xml.dll
+System.Design.dll
+System.Management.dll
+
+
+
+
+http://www.codeproject.com/Articles/20574/Open-Source-QRCode-Library
+
+http://twit88.com/blog/2007/10/06/encode-and-decode-qrcode-on-windows-mobile/
+
+just change from
+MemoryStream memoryStream = new MemoryStream(Resources.GetResource(fileName));
+to this
+MemoryStream memoryStream = new MemoryStream((byte[])Resources.ResourceManager.GetObject(fileName));
+
+
+In QRCodeEncoder.cs,change Encoding.Unicode to Encoding.UTF8. 
+
+public virtual Bitmap Encode(String content)
+{
+    if (QRCodeUtility.IsUniCode(content))
+    {
+        return Encode(content, Encoding.UTF8); //Encoding.Unicode);
+    }
+    else
+    {
+        return Encode(content, Encoding.ASCII);
+    }
+}
