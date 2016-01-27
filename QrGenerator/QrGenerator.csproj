@@ -73,6 +73,13 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Deployment\01_EnableCLR.sql" />
+    <Content Include="Deployment\02_CreateFunction.sql" />
+    <Content Include="Deployment\03_Create_SP.sql" />
+    <Content Include="Deployment\04_Test_SP.sql" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

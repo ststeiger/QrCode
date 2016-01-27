@@ -1,22 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Windows.Forms;
-
+﻿
 namespace QrGenerator
 {
+
+
     static class Program
     {
+
+
         /// <summary>
         /// Der Haupteinstiegspunkt für die Anwendung.
         /// </summary>
-        [STAThread]
+        [System.STAThread]
         static void Main()
         {
             if (false)
             {
-                Application.EnableVisualStyles();
-                Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new Form1());
+                System.Windows.Forms.Application.EnableVisualStyles();
+                System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(false);
+                System.Windows.Forms.Application.Run(new Form1());
             }
 
             string dir = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
@@ -26,11 +27,11 @@ namespace QrGenerator
             dir = System.IO.Path.GetFullPath(dir);
 
             byte[] ba = System.IO.File.ReadAllBytes(dir);
-            //System.Runtime.Remoting.Metadata.W3cXsd2001.SoapHexBinary x = new System.Runtime.Remoting.Metadata.W3cXsd2001.SoapHexBinary(ba);
-            //string lalalala = x.ToString();
+            //System.Runtime.Remoting.Metadata.W3cXsd2001.SoapHexBinary shb = new System.Runtime.Remoting.Metadata.W3cXsd2001.SoapHexBinary(ba);
+            //string soapHex = shb.ToString();
             string hexString = ByteArrayToHexViaByteManipulation2(ba);
             // System.Console.WriteLine(hexString);
-            //System.Console.WriteLine(lalalala);
+            //System.Console.WriteLine(soapHex);
 
             System.Console.WriteLine(dir);
 
@@ -45,14 +46,18 @@ namespace QrGenerator
                          " WITH PERMISSION_SET = " + "UNSAFE";
 
 
+            // SELECT * FROM sys.dm_clr_properties
+            // http://blogs.msdn.com/b/dohollan/archive/2012/04/20/sql-server-2012-sqlclr-net-framework-version.aspx
+            // http://how-i-fixed-it.blogspot.ch/2013/01/use-systemdrawingdll-from-sqlclr-c-code.html
+            // http://www.codeproject.com/Tips/791953/SQL-CLR-functions
+            
+
             System.IO.File.WriteAllText(@"D:\stefan.steiger\Downloads\myfile.sql", sql, System.Text.Encoding.UTF8);
 
             System.Console.WriteLine(System.Environment.NewLine);
             System.Console.WriteLine(" --- Press any key to continue --- ");
             System.Console.ReadKey();
         }
-
-
 
 
         private static string ByteArrayToHexViaByteManipulation2(byte[] bytes)
@@ -70,9 +75,16 @@ namespace QrGenerator
                 b = bytes[i] & 0xF;
                 c[2 + i * 2 + 1] = (char)(55 + b + (((b - 10) >> 31) & -7));
             }
+
             return new string(c);
         }
 
 
     }
+
+
 }
+
+
+// Alternative
+// http://beyondrelational.com/modules/2/blogs/65/posts/11604/generating-qr-codes-in-ssrs.aspx
