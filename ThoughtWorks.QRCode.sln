@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QRCodeLib", "QRCodeLib\QRCo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QRCodeSampleApp", "QRCodeSampleApp\QRCodeSampleApp.csproj", "{41E1CFDE-BFA0-4274-9267-B129B46BC312}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QrGenerator", "QrGenerator\QrGenerator.csproj", "{7438A27D-B6B1-4E79-B2C6-8AAECDB2D9FF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|.NET = Debug|.NET
@@ -37,6 +39,16 @@ Global
 		{41E1CFDE-BFA0-4274-9267-B129B46BC312}.Release|Any CPU.Build.0 = Release|Any CPU
 		{41E1CFDE-BFA0-4274-9267-B129B46BC312}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{41E1CFDE-BFA0-4274-9267-B129B46BC312}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{7438A27D-B6B1-4E79-B2C6-8AAECDB2D9FF}.Debug|.NET.ActiveCfg = Debug|Any CPU
+		{7438A27D-B6B1-4E79-B2C6-8AAECDB2D9FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7438A27D-B6B1-4E79-B2C6-8AAECDB2D9FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7438A27D-B6B1-4E79-B2C6-8AAECDB2D9FF}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{7438A27D-B6B1-4E79-B2C6-8AAECDB2D9FF}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{7438A27D-B6B1-4E79-B2C6-8AAECDB2D9FF}.Release|.NET.ActiveCfg = Release|Any CPU
+		{7438A27D-B6B1-4E79-B2C6-8AAECDB2D9FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7438A27D-B6B1-4E79-B2C6-8AAECDB2D9FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7438A27D-B6B1-4E79-B2C6-8AAECDB2D9FF}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{7438A27D-B6B1-4E79-B2C6-8AAECDB2D9FF}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

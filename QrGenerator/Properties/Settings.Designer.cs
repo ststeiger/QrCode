@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace QRCodeSample.Properties {
+namespace QrGenerator.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

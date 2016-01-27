@@ -44,6 +44,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <OutputPath>bin\Debug\</OutputPath>
@@ -95,9 +96,12 @@
     <Reference Include="System">
       <Name>System</Name>
     </Reference>
+    <Reference Include="System.Data" />
     <Reference Include="System.Drawing">
       <Name>System.Drawing</Name>
+      <Private>False</Private>
     </Reference>
+    <Reference Include="System.XML" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.cs" />
@@ -130,6 +134,7 @@
     <Compile Include="reader\pattern\LogicalSeed.cs" />
     <Compile Include="reader\QRCodeDataBlockReader.cs" />
     <Compile Include="reader\QRCodeImageReader.cs" />
+    <Compile Include="SqlServer.cs" />
     <Compile Include="util\ConsoleCanvas.cs" />
     <Compile Include="util\SystemUtils.cs" />
     <Compile Include="util\Color.cs" />
@@ -142,7 +147,6 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <SubType>Designer</SubType>
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
