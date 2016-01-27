@@ -60,6 +60,8 @@ namespace QrGenerator
         }
 
 
+        // Benchmark: 
+        // http://stackoverflow.com/questions/311165/how-do-you-convert-byte-array-to-hexadecimal-string-and-vice-versa
         private static string ByteArrayToHexViaByteManipulation2(byte[] bytes)
         {
             char[] c = new char[bytes.Length * 2 + 2];
@@ -88,3 +90,4 @@ namespace QrGenerator
 
 // Alternative
 // http://beyondrelational.com/modules/2/blogs/65/posts/11604/generating-qr-codes-in-ssrs.aspx
+// http://qrcode.kaywa.com/img.php?s=8&d=noobishNoob
