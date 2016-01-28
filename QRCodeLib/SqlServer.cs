@@ -16,10 +16,10 @@ namespace ThoughtWorks.QRCode
             byte[] ba = null;
             ThoughtWorks.QRCode.Codec.QRCodeEncoder QRcodeInstance = new ThoughtWorks.QRCode.Codec.QRCodeEncoder();
             QRcodeInstance.QRCodeEncodeMode = ThoughtWorks.QRCode.Codec.QRCodeEncoder.ENCODE_MODE.BYTE;
-            QRcodeInstance.QRCodeErrorCorrect = ThoughtWorks.QRCode.Codec.QRCodeEncoder.ERROR_CORRECTION.H;
+            QRcodeInstance.QRCodeErrorCorrect = ThoughtWorks.QRCode.Codec.QRCodeEncoder.ERROR_CORRECTION.L; // H
             QRcodeInstance.QRCodeScale = 2;
             //QRcodeInstance.QRCodeVersion = 7;
-            QRcodeInstance.QRCodeVersion = 20;
+            QRcodeInstance.QRCodeVersion = 15; // 29
 
 
             using (System.IO.MemoryStream ms = new System.IO.MemoryStream())

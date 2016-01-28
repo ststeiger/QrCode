@@ -58,6 +58,8 @@ namespace QRCodeSample
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lblMaxLength = new System.Windows.Forms.Label();
             this.tabMain.SuspendLayout();
             this.tabEncode.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picEncode)).BeginInit();
@@ -77,11 +79,13 @@ namespace QRCodeSample
             this.tabMain.Location = new System.Drawing.Point(12, 27);
             this.tabMain.Name = "tabMain";
             this.tabMain.SelectedIndex = 0;
-            this.tabMain.Size = new System.Drawing.Size(471, 427);
+            this.tabMain.Size = new System.Drawing.Size(471, 760);
             this.tabMain.TabIndex = 0;
             // 
             // tabEncode
             // 
+            this.tabEncode.Controls.Add(this.lblMaxLength);
+            this.tabEncode.Controls.Add(this.label7);
             this.tabEncode.Controls.Add(this.btnTest);
             this.tabEncode.Controls.Add(this.cboCorrectionLevel);
             this.tabEncode.Controls.Add(this.btnPrint);
@@ -100,14 +104,14 @@ namespace QRCodeSample
             this.tabEncode.Location = new System.Drawing.Point(4, 22);
             this.tabEncode.Name = "tabEncode";
             this.tabEncode.Padding = new System.Windows.Forms.Padding(3);
-            this.tabEncode.Size = new System.Drawing.Size(463, 401);
+            this.tabEncode.Size = new System.Drawing.Size(463, 734);
             this.tabEncode.TabIndex = 0;
             this.tabEncode.Text = "Encode";
             this.tabEncode.UseVisualStyleBackColor = true;
             // 
             // btnTest
             // 
-            this.btnTest.Location = new System.Drawing.Point(333, 368);
+            this.btnTest.Location = new System.Drawing.Point(333, 686);
             this.btnTest.Name = "btnTest";
             this.btnTest.Size = new System.Drawing.Size(94, 27);
             this.btnTest.TabIndex = 11;
@@ -124,14 +128,14 @@ namespace QRCodeSample
             "M",
             "Q",
             "H"});
-            this.cboCorrectionLevel.Location = new System.Drawing.Point(340, 257);
+            this.cboCorrectionLevel.Location = new System.Drawing.Point(340, 575);
             this.cboCorrectionLevel.Name = "cboCorrectionLevel";
             this.cboCorrectionLevel.Size = new System.Drawing.Size(95, 21);
             this.cboCorrectionLevel.TabIndex = 10;
             // 
             // btnPrint
             // 
-            this.btnPrint.Location = new System.Drawing.Point(233, 368);
+            this.btnPrint.Location = new System.Drawing.Point(233, 686);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(94, 27);
             this.btnPrint.TabIndex = 3;
@@ -142,7 +146,7 @@ namespace QRCodeSample
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(250, 260);
+            this.label5.Location = new System.Drawing.Point(250, 578);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(84, 13);
             this.label5.TabIndex = 9;
@@ -150,7 +154,7 @@ namespace QRCodeSample
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(133, 368);
+            this.btnSave.Location = new System.Drawing.Point(133, 686);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(94, 27);
             this.btnSave.TabIndex = 2;
@@ -160,7 +164,7 @@ namespace QRCodeSample
             // 
             // txtSize
             // 
-            this.txtSize.Location = new System.Drawing.Point(70, 335);
+            this.txtSize.Location = new System.Drawing.Point(70, 653);
             this.txtSize.Name = "txtSize";
             this.txtSize.Size = new System.Drawing.Size(43, 20);
             this.txtSize.TabIndex = 8;
@@ -168,7 +172,7 @@ namespace QRCodeSample
             // 
             // btnEncode
             // 
-            this.btnEncode.Location = new System.Drawing.Point(33, 368);
+            this.btnEncode.Location = new System.Drawing.Point(33, 686);
             this.btnEncode.Name = "btnEncode";
             this.btnEncode.Size = new System.Drawing.Size(94, 27);
             this.btnEncode.TabIndex = 1;
@@ -179,7 +183,7 @@ namespace QRCodeSample
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 336);
+            this.label4.Location = new System.Drawing.Point(6, 654);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(27, 13);
             this.label4.TabIndex = 7;
@@ -230,7 +234,7 @@ namespace QRCodeSample
             "38",
             "39",
             "40"});
-            this.cboVersion.Location = new System.Drawing.Point(70, 296);
+            this.cboVersion.Location = new System.Drawing.Point(70, 614);
             this.cboVersion.Name = "cboVersion";
             this.cboVersion.Size = new System.Drawing.Size(157, 21);
             this.cboVersion.TabIndex = 6;
@@ -238,7 +242,7 @@ namespace QRCodeSample
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 300);
+            this.label3.Location = new System.Drawing.Point(6, 618);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 13);
             this.label3.TabIndex = 5;
@@ -252,7 +256,7 @@ namespace QRCodeSample
             "AlphaNumeric",
             "Numeric",
             "Byte"});
-            this.cboEncoding.Location = new System.Drawing.Point(70, 257);
+            this.cboEncoding.Location = new System.Drawing.Point(70, 575);
             this.cboEncoding.Name = "cboEncoding";
             this.cboEncoding.Size = new System.Drawing.Size(157, 21);
             this.cboEncoding.TabIndex = 4;
@@ -260,7 +264,7 @@ namespace QRCodeSample
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 264);
+            this.label2.Location = new System.Drawing.Point(6, 582);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 3;
@@ -268,7 +272,7 @@ namespace QRCodeSample
             // 
             // txtEncodeData
             // 
-            this.txtEncodeData.Location = new System.Drawing.Point(69, 228);
+            this.txtEncodeData.Location = new System.Drawing.Point(69, 546);
             this.txtEncodeData.Name = "txtEncodeData";
             this.txtEncodeData.Size = new System.Drawing.Size(388, 20);
             this.txtEncodeData.TabIndex = 2;
@@ -277,7 +281,7 @@ namespace QRCodeSample
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 228);
+            this.label1.Location = new System.Drawing.Point(6, 546);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(30, 13);
             this.label1.TabIndex = 1;
@@ -288,7 +292,7 @@ namespace QRCodeSample
             this.picEncode.BackColor = System.Drawing.Color.White;
             this.picEncode.Location = new System.Drawing.Point(6, 6);
             this.picEncode.Name = "picEncode";
-            this.picEncode.Size = new System.Drawing.Size(451, 208);
+            this.picEncode.Size = new System.Drawing.Size(451, 516);
             this.picEncode.TabIndex = 0;
             this.picEncode.TabStop = false;
             // 
@@ -385,11 +389,31 @@ namespace QRCodeSample
             // 
             this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(146, 656);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(63, 13);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Max-Length";
+            // 
+            // lblMaxLength
+            // 
+            this.lblMaxLength.AutoSize = true;
+            this.lblMaxLength.BackColor = System.Drawing.Color.PapayaWhip;
+            this.lblMaxLength.Location = new System.Drawing.Point(241, 656);
+            this.lblMaxLength.MinimumSize = new System.Drawing.Size(50, 0);
+            this.lblMaxLength.Name = "lblMaxLength";
+            this.lblMaxLength.Size = new System.Drawing.Size(50, 13);
+            this.lblMaxLength.TabIndex = 13;
+            this.lblMaxLength.Text = "     ";
+            // 
             // QrCodeSampleApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(496, 450);
+            this.ClientSize = new System.Drawing.Size(496, 799);
             this.Controls.Add(this.tabMain);
             this.Controls.Add(this.menuStrip1);
             this.Name = "QrCodeSampleApp";
@@ -442,6 +466,8 @@ namespace QRCodeSample
         private System.Windows.Forms.Button btnOpen;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.Button btnTest;
+        private System.Windows.Forms.Label lblMaxLength;
+        private System.Windows.Forms.Label label7;
     }
 }
 

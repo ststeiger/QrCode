@@ -76,6 +76,7 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="Deployment\01_EnableCLR.sql" />
+    <Content Include="Deployment\05_DropFunction.sql" />
     <Content Include="Deployment\02_CreateFunction.sql" />
     <Content Include="Deployment\03_Create_SP.sql" />
     <Content Include="Deployment\04_Test_SP.sql" />

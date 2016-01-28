@@ -176,7 +176,7 @@ namespace ThoughtWorks.QRCode.Codec
 			return structureappendParity;
 		}
 				
-		public virtual bool[][] calQrcode(byte[] qrcodeData)
+		public virtual bool[][] calQrcode(byte[] qrcodeData, out int determinedMaxLength)
 		{
 			int dataLength;
 			int dataCounter = 0;
@@ -189,6 +189,7 @@ namespace ThoughtWorks.QRCode.Codec
 			if (dataLength <= 0)
 			{
 				bool[][] ret = new bool[][]{new bool[]{false}};
+                determinedMaxLength = -1;
 				return ret;
 			}
 			
@@ -544,6 +545,8 @@ namespace ThoughtWorks.QRCode.Codec
 					}
 				}
 			}
+
+            determinedMaxLength = maxDataCodewords;
 			sbyte[] dataCodewords = divideDataBy8Bits(dataValue, dataBits, maxDataCodewords);
 			sbyte[] codewords = calculateRSECC(dataCodewords, rsEccCodewords[0], rsBlockOrder, maxDataCodewords, maxCodewords);
 			
@@ -654,6 +657,8 @@ namespace ThoughtWorks.QRCode.Codec
 			l2 = (max - 1) / 8 + 1;
             // Important - string.Length <= maxDataCodeWords
 			sbyte[] codewords = new sbyte[maxDataCodewords];
+
+
 			for (int i = 0; i < l2; i++)
 			{
 				codewords[i] = 0;
@@ -1014,6 +1019,9 @@ namespace ThoughtWorks.QRCode.Codec
 		}
 
 
+        public int MaximumContentLength = -1;
+
+
         /// <summary>
         /// Encode the content using the encoding scheme given
         /// </summary>
@@ -1022,7 +1030,7 @@ namespace ThoughtWorks.QRCode.Codec
         /// <returns></returns>
         public virtual Bitmap Encode(String content, Encoding encoding)
         {
-            bool[][] matrix = calQrcode(encoding.GetBytes(content));
+            bool[][] matrix = calQrcode(encoding.GetBytes(content), out MaximumContentLength);
             SolidBrush brush = new SolidBrush(qrCodeBackgroundColor);
             Bitmap image = new Bitmap( (matrix.Length * qrCodeScale) + 1, (matrix.Length * qrCodeScale) + 1);
             Graphics g = Graphics.FromImage(image);
