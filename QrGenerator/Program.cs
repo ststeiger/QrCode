@@ -20,6 +20,8 @@ namespace QrGenerator
                 System.Windows.Forms.Application.Run(new Form1());
             }
 
+#if true 
+
             string dir = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
             dir = System.IO.Path.Combine(dir, "../../..");
             dir = System.IO.Path.Combine(dir, "QRCodeLib/bin/Release");
@@ -50,9 +52,11 @@ namespace QrGenerator
             // http://blogs.msdn.com/b/dohollan/archive/2012/04/20/sql-server-2012-sqlclr-net-framework-version.aspx
             // http://how-i-fixed-it.blogspot.ch/2013/01/use-systemdrawingdll-from-sqlclr-c-code.html
             // http://www.codeproject.com/Tips/791953/SQL-CLR-functions
-            
+
 
             System.IO.File.WriteAllText(@"D:\stefan.steiger\Downloads\myfile.sql", sql, System.Text.Encoding.UTF8);
+
+#endif
 
             System.Console.WriteLine(System.Environment.NewLine);
             System.Console.WriteLine(" --- Press any key to continue --- ");
