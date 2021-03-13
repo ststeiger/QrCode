@@ -42,6 +42,7 @@
     <Compile Include="Imaging\Base\OxyColors.cs" />
     <Compile Include="Imaging\Jpeg\Flux\FluxCheck.cs" />
     <Compile Include="Imaging\Jpeg\Flux\FluxLinq.cs" />
+    <Compile Include="SSRS.cs" />
     <Compile Include="QR\Common\BarcodeFormat.cs" />
     <Compile Include="QR\Common\BitArray.cs" />
     <Compile Include="QR\Common\BitMatrix.cs" />
